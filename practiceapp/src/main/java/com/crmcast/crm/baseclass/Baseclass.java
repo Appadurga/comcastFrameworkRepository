@@ -44,8 +44,8 @@ public class Baseclass  {
 	@BeforeClass 
 	public void configBC() throws Throwable
 	{
-		String BROWSER=fli.getDataFromPropertiesFile("browser");
-
+		//String BROWSER=fli.getDataFromPropertiesFile("browser");
+          String BROWSER=System.getProperty("browser",fli.getDataFromPropertiesFile("browser"));
 		if(BROWSER.equals("chrome")) {
 			driver=new ChromeDriver();
 		}else if (BROWSER.equals("firefox")) {
@@ -61,9 +61,12 @@ public class Baseclass  {
 		
 		/* step1:login to application 
 		 * scenario:login()==>navigate to contact */
-		String URL=fli.getDataFromPropertiesFile("url");
-        String USERNAME=fli.getDataFromPropertiesFile("username");
-        String PASSWORD=fli.getDataFromPropertiesFile("password");
+		//String URL=fli.getDataFromPropertiesFile("url");
+       // String USERNAME=fli.getDataFromPropertiesFile("username");
+       // String PASSWORD=fli.getDataFromPropertiesFile("password");
+		String URL=System.getProperty("url",fli.getDataFromPropertiesFile("url"));
+	       String USERNAME=System.getProperty("username",fli.getDataFromPropertiesFile("username"));
+	        String PASSWORD=System.getProperty("password",fli.getDataFromPropertiesFile("password"));
 		Login lp=new Login(driver);
 		lp.Logintoapp(URL, USERNAME, PASSWORD);
 				

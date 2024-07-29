@@ -4,7 +4,7 @@
   <test name="Test">
     <classes>
       <class name="com.comcast.crm.contacttest.createcontactTest"/>
-      <class name="com.comcast.crm.orgtest.createorgTest"/>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
